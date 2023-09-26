@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4a89b5f9.css",
+    "main.js": "/static/js/main.5200732f.js",
+    "static/js/787.f7e35124.chunk.js": "/static/js/787.f7e35124.chunk.js",
+    "static/media/YeongdeokSea.ttf": "/static/media/YeongdeokSea.e3ab0f4cef8e292ae922.ttf",
+    "static/media/RobotoSlab-VariableFont_wght.ttf": "/static/media/RobotoSlab-VariableFont_wght.677d14da87bce007211b.ttf",
+    "index.html": "/index.html",
+    "main.4a89b5f9.css.map": "/static/css/main.4a89b5f9.css.map",
+    "main.5200732f.js.map": "/static/js/main.5200732f.js.map",
+    "787.f7e35124.chunk.js.map": "/static/js/787.f7e35124.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a89b5f9.css",
+    "static/js/main.5200732f.js"
+  ]
+}
