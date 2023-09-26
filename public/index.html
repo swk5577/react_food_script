@@ -43,7 +43,7 @@
     <script>
       if('serviceWorker' in navigator){
         window.addEventListener('load',()=>{
-          navigator.serviceWorker.register('/react_basic/sw.js').then(reg=>{
+          navigator.serviceWorker.register('/react_food_script/sw.js').then(reg=>{
             console.log('Worker Registered');
           }).catch(err=>{
             console.log('error in service worker',err1)

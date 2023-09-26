@@ -13,7 +13,7 @@ import New from './page/New';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/react_food_script'>
 
 
       <main>
