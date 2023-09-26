@@ -1,0 +1,9 @@
+@mixin flex($just : space-between  , $align :center){
+    display: flex;
+    justify-content: $just;
+    align-items: $align;
+}
+
+$font_Big : 20px;
+$font_middle : 15px;
+$font_small : 12px;

@@ -1,0 +1,358 @@
+@import '_mixin';
+
+@font-face {
+  font-family: 'foo';
+  src: url('./YeongdeokSea.ttf') format('ttf');
+  font-style: normal;
+  font-weight: normal;
+};
+
+@font-face {
+  font-family: 'foo';
+  src: url('./RobotoSlab-VariableFont_wght.ttf') format('ttf');
+  unicode-range: U+0041-005A, U+0061-007A;
+  font-style: normal;
+  font-weight: normal;
+};
+
+
+* {
+  font-family: 'foo' ;
+  box-sizing: border-box;
+}
+
+ul,
+li,
+p,
+b,
+h2,
+h1,
+h3,
+figure,
+figcaption,
+a,
+input,
+button {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  max-width: 780px;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+.sub_box {
+  position: relative;
+  transform: translateX(100%);
+  transition: .5s;
+  @include flex(start,start);
+  flex-direction: column;
+  position: fixed;
+  top: 0;right: 0;
+  z-index: 10;
+  background-color: #FF8551;
+  height: 100%;
+  width: 80%;
+  padding-top: 20%;
+
+  >a {
+    font-size: $font_Big;
+    color: white;
+    padding: 5% 10%;
+    margin: 2% 0;
+  }
+  >p{
+    width: 7%;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+  }
+
+  &.on {
+    transform: translateX(0);
+  }
+}
+
+.ice-box {
+  @include flex(center);
+  position: fixed;
+  z-index: 10;
+  bottom: 3%;
+  right: 6%;
+  background-color: #FF8551;
+  border: 2px solid white;
+  border-radius: 100%;
+  width: 15vw;
+  height: 15vw;
+  max-width: 55px;
+  max-height: 55px;
+
+  >p {
+    width: 50%;
+  }
+}
+
+.long_but {
+  position: relative;
+  position: relative;
+  top: 10%;left: 50%;
+  transform: translateX(-50%);
+  margin: 5% auto;
+  padding: 1% 0 2%;
+  font-size: $font_Big;
+  background-color: #FF8551;
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 30px;
+}
+
+.header {
+  padding: 0 5%;
+  background-color: #FF8551;
+
+  .HDtop {
+    padding: 4% 0;
+    @include flex();
+
+    >p {
+      width: 5%;
+    }
+
+    >h2 {
+      font-size: $font_Big;
+      color: white;
+    }
+  }
+
+  .input {
+    @include flex();
+    background-color: white;
+    border-radius: 30px;
+    padding: 1% 1% 1% 5%;
+
+    input {
+      font-size: $font_middle;
+      width: 90%;
+      border: none;
+      background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    button {
+      @include flex(center);
+      border: none;
+      border-radius: 40px;
+      background-color: #000000;
+      height: 30px;
+      width: 30px;
+
+      >p {
+        width: 60%;
+      }
+    }
+  }
+
+  >.hashi {
+    font-size: $font_middle;
+    margin-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    overflow: hidden;
+
+    >li {
+      margin: 1% 1% 2%;
+      padding: .5% 3%;
+      background-color: #FFE5CF;
+      border-radius: 20px;
+    }
+  }
+}
+
+.contan {
+  background-color: #FAF0E4;
+  padding: 0 5%;
+}
+
+
+//home
+.home {
+
+  li {
+    padding-top: 6%;
+    filter: drop-shadow(1px 1px 3px #8d8d8d);
+  }
+
+  .food_data {
+    padding: 4%;
+    background-color: white;
+    border-radius: 30px;
+
+    >p {
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    figcaption {
+      .title {
+        @include flex();
+        margin-bottom: 5%;
+
+
+        >div {
+          display: flex;
+          font-size: $font_Big;
+        }
+        p {
+          font-size: $font_middle;
+
+          padding: 8px;
+          display: flex;
+          white-space: nowrap;
+
+          >img {
+            padding: 0 5px;
+          }
+        }
+      }
+
+      .hashi>* {
+        font-size: $font_small;
+        padding: 1% 3%;
+        border-radius: 30px;
+        background-color: #FFE5CF;
+      }
+    }
+  }
+}
+
+
+//Dataill
+.datail {
+  position: relative;
+  .list_butFup{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 70%);
+    >div{
+      position: relative;
+      width: 80vw;
+      height: 70vh;
+      top: 10%;left: 50%;
+      transform: translateX(-50%);
+      >p{
+        position: absolute;
+        top: 0; right: 0;
+        width: 5%;
+      }
+      >h2{
+        padding-top: 5%;
+        text-align: center;
+        font-size: $font_Big;
+        color: white;
+      }
+    }
+  }
+
+  .lover{
+    position: absolute;
+    top: -10%; right: 5%;
+    background-color: white;
+    border : 2px solid black;
+    border-radius: 50%;
+    width: 10vw;
+    height: 10vw;
+    &::after{
+      display: block;
+      height: 100%;
+      content: '';
+      background: url(./icon_heart_glay.png) no-repeat center center /70%;
+    }
+    &.on::after{
+      background-image: url(./icon_heart_.png);
+    }
+    
+  }
+}
+.list{
+  >h2{
+    font-size: $font_Big;
+    text-align: center;
+    color: white;
+    background-color: #FF8551;
+    padding: 2% 0;
+  }
+  >p{
+    position: absolute;
+    top: 2%; right: 2%;
+    width: 4%;
+  }
+  >div{
+    padding: 0 5%;
+  }
+
+  .input {
+    @include flex();
+    margin: 2%;
+    background-color: white;
+    border-radius: 30px;
+    border: 2px solid #FF8551 ;
+    padding: 1% 1% 1% 5%;
+
+    input {
+      font-size: $font_middle;
+      width: 90%;
+      border: none;
+      background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    button {
+      @include flex(center);
+      color: white;
+      border: none;
+      border-radius: 40px;
+      background-color: #000000;
+      height: 30px;
+      width: 30px;
+
+    }
+  }
+
+}
+.list_but{
+  @include flex(start);
+  flex-wrap: wrap;
+  gap: 5%;
+  margin-top: 5%;
+  >li{
+    font-size: $font_middle;
+    padding: 4%;
+    background-color: #FFE5CF ;
+    border: 5px #FFE5CF solid;
+    border-radius: 20px;
+  }
+  .on {
+    background-color: #FF8551;
+    border: 5px solid #FF8551 ;
+    color: white;
+  }
+  .old{
+    border: 5px red solid;
+  }
+}
+
+.off {
+  display: none;
+}

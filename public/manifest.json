@@ -1,0 +1,25 @@
+{
+  "short_name": "recipe",
+  "name": "Recipe for ingredients in the refrigerator",
+  "icons": [
+    {
+      "src": "/icons/favicon-16x16.png" ,
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/icons/favicon-196x196.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
