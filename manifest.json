@@ -16,17 +16,6 @@
   "display_override": [
     "window-controls-overlay"
   ],
-  "screenshots": [
-    {
-      "src": "assets/screen.png"
-    },
-    {
-      "src": "assets/screen.png"
-    },
-    {
-      "src": "assets/screen.png"
-    }
-  ],
   "features": [
     "Cross Platform",
     "low-latency inking",
@@ -49,8 +38,7 @@
     {
       "src": "/react_food_script/icons/ios/29.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
       "src": "/react_food_script/icons/ios/32.png",
@@ -67,19 +55,5 @@
   "launch_handler": {
     "client_mode": "navigate-existing"
   },
-  "shortcuts": [
-    {
-      "name": "Start Live Session",
-      "short_name": "Start Live",
-      "description": "Jump direction into starting or joining a live session",
-      "url": "/?startLive",
-      "icons": [
-        {
-          "src": "/assets/icon/256.png",
-          "sizes": "256x256"
-        }
-      ]
-    }
-  ],
   "iarc_rating_id": "15"
 }
