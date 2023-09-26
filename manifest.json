@@ -1,25 +1,85 @@
 {
-  "short_name": "recipe",
-  "name": "Recipe for ingredients in the refrigerator",
-  "icons": [
+  "id": "/MIB",
+  "dir": "ltr",
+  "lang": "en",
+  "name": "MYice_box",
+  "scope": "/",
+  "display": "standalone",
+  "start_url": "/",
+  "short_name": "MIB",
+  "theme_color": "#ff8551",
+  "description": "냉장고에 보관된 재료 정리를 도와주고 추천 레시피까지 검색해 볼 수 있는 어플",
+  "orientation": "any",
+  "background_color": "#FFFFFF",
+  "related_applications": [],
+  "prefer_related_applications": true,
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "screenshots": [
     {
-      "src": "/icons/favicon-16x16.png" ,
-      "sizes": "16x16",
-      "type": "image/png"
+      "src": "assets/screen.png"
     },
     {
-      "src": "/icons/favicon-96x96.png",
-      "type": "image/png",
-      "sizes": "96x96"
+      "src": "assets/screen.png"
     },
     {
-      "src": "/icons/favicon-196x196.png",
-      "type": "image/png",
-      "sizes": "196x196"
+      "src": "assets/screen.png"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "features": [
+    "Cross Platform",
+    "low-latency inking",
+    "fast",
+    "useful AI"
+  ],
+  "icons": [
+    {
+      "src": "/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "food",
+    "health",
+    "productivity"
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "shortcuts": [
+    {
+      "name": "Start Live Session",
+      "short_name": "Start Live",
+      "description": "Jump direction into starting or joining a live session",
+      "url": "/?startLive",
+      "icons": [
+        {
+          "src": "/assets/icon/256.png",
+          "sizes": "256x256"
+        }
+      ]
+    }
+  ],
+  "iarc_rating_id": "15"
 }
