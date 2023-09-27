@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/react_food_script/static/css/main.cad60dac.css",
-    "main.js": "/react_food_script/static/js/main.4da50e08.js",
+    "main.css": "/react_food_script/static/css/main.f946ac50.css",
+    "main.js": "/react_food_script/static/js/main.305594ac.js",
     "static/js/787.f7e35124.chunk.js": "/react_food_script/static/js/787.f7e35124.chunk.js",
-    "static/media/YeongdeokSea.ttf": "/react_food_script/static/media/YeongdeokSea.e3ab0f4cef8e292ae922.ttf",
-    "static/media/RobotoSlab-VariableFont_wght.ttf": "/react_food_script/static/media/RobotoSlab-VariableFont_wght.677d14da87bce007211b.ttf",
+    "static/media/YeongdeokSea.woff2": "/react_food_script/static/media/YeongdeokSea.264d39d97693d5da045d.woff2",
+    "static/media/RobotoSlab-Regular.woff2": "/react_food_script/static/media/RobotoSlab-Regular.46a9cf489cb66ddccc8a.woff2",
     "index.html": "/react_food_script/index.html",
-    "main.cad60dac.css.map": "/react_food_script/static/css/main.cad60dac.css.map",
-    "main.4da50e08.js.map": "/react_food_script/static/js/main.4da50e08.js.map",
+    "static/media/icon_heart_.svg": "/react_food_script/static/media/icon_heart_.7c941d22e90f08d7a20b.svg",
+    "static/media/icon_heart_glay.svg": "/react_food_script/static/media/icon_heart_glay.b28397253dd143421cf7.svg",
+    "main.f946ac50.css.map": "/react_food_script/static/css/main.f946ac50.css.map",
+    "main.305594ac.js.map": "/react_food_script/static/js/main.305594ac.js.map",
     "787.f7e35124.chunk.js.map": "/react_food_script/static/js/787.f7e35124.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cad60dac.css",
-    "static/js/main.4da50e08.js"
+    "static/css/main.f946ac50.css",
+    "static/js/main.305594ac.js"
   ]
 }
