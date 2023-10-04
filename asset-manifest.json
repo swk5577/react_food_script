@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/react_food_script/static/css/main.2ba8ec37.css",
-    "main.js": "/react_food_script/static/js/main.59d5537b.js",
+    "main.css": "/react_food_script/static/css/main.2b4e734f.css",
+    "main.js": "/react_food_script/static/js/main.e08d0b59.js",
     "static/js/787.f7e35124.chunk.js": "/react_food_script/static/js/787.f7e35124.chunk.js",
     "static/media/YeongdeokSea.woff2": "/react_food_script/static/media/YeongdeokSea.264d39d97693d5da045d.woff2",
     "static/media/RobotoSlab-Regular.woff2": "/react_food_script/static/media/RobotoSlab-Regular.46a9cf489cb66ddccc8a.woff2",
     "index.html": "/react_food_script/index.html",
     "static/media/icon_heart_.svg": "/react_food_script/static/media/icon_heart_.7c941d22e90f08d7a20b.svg",
     "static/media/icon_heart_glay.svg": "/react_food_script/static/media/icon_heart_glay.b28397253dd143421cf7.svg",
-    "main.2ba8ec37.css.map": "/react_food_script/static/css/main.2ba8ec37.css.map",
-    "main.59d5537b.js.map": "/react_food_script/static/js/main.59d5537b.js.map",
+    "main.2b4e734f.css.map": "/react_food_script/static/css/main.2b4e734f.css.map",
+    "main.e08d0b59.js.map": "/react_food_script/static/js/main.e08d0b59.js.map",
     "787.f7e35124.chunk.js.map": "/react_food_script/static/js/787.f7e35124.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ba8ec37.css",
-    "static/js/main.59d5537b.js"
+    "static/css/main.2b4e734f.css",
+    "static/js/main.e08d0b59.js"
   ]
 }
