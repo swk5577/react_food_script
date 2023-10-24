@@ -4,6 +4,7 @@ import { Mycon } from '../MyCon';
 import { log } from 'console';
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 
 type Props = {}
 
@@ -12,6 +13,8 @@ function Home({ }: Props) {
     const { foodData, setpagenum, pagenum, setSearchValue, setidxdata } = useContext(Mycon)
     const [foodData_list, setfoodData_list] = useState(foodData);
     const [subOn, setsubOn] = useState(false);
+    const [withs, setwiths] = useState(0);
+    const [view, inView] = useInView()
     const serch = useRef<any>([]);
     const navi = useNavigate();
 
@@ -23,6 +26,9 @@ function Home({ }: Props) {
             setSearchValue(serch.current[1])
             setfoodData_list(foodData)
             setpagenum(1)
+            lile.forEach((li) => {
+                li.classList.remove('on');
+            })
         }
     }
     const keyup = (e: any) => {
@@ -33,6 +39,28 @@ function Home({ }: Props) {
 
     }
 
+
+
+
+
+
+    const liserch = (item: any) => {
+        console.log(item.innerText);
+
+        serch.current[1] = item.innerText;
+        serchbut();
+    }
+
+    const lile = document.querySelectorAll('.hashi >li')
+    const lion = (item: any) => {
+        lile.forEach((li) => {
+            li.classList.remove('on');
+        })
+        item.classList.add('on');
+
+    }
+
+
     useEffect(() => {
         if (pagenum == 1) {
             setfoodData_list(foodData);
@@ -40,49 +68,61 @@ function Home({ }: Props) {
             if (foodData != null) {
                 setfoodData_list([...foodData_list, ...foodData]);
                 console.log('foodset');
-                
+
             }
         }
-    }, [pagenum&&foodData]);
 
+    }, [pagenum && foodData]);
+    
 
-    const liserch = (item: any) => {
-        console.log(item.innerText);
+    useEffect(()=>{
+        setwiths((document.querySelector('#root') as HTMLElement).offsetWidth);
+    },[inView])
 
-        serch.current[1] = item.innerText;
-        console.log(serch)
-        serchbut();
-    }
-
-
+    console.log(foodData.length);
+    
     return (
         <>
-            <div className='header'>
-                <div className='HDtop'><p><img src="./ice_box.png" alt="" /></p> <h2>오늘은 뭐해 먹지?</h2> <p onClick={() => setsubOn(true)}><img src='./berger.png'></img></p></div>
-                <div className={`sub_box ${subOn ? 'on' : ''}`}>
-                    <p onClick={() => setsubOn(false)}><img src='./close.png'/></p>
-                    <Link to="/" onClick={()=>{setsubOn(false)}}>추천 레시피</Link>
-                    <Link to="/lover" onClick={()=>{setsubOn(false)}}>좋아요한 레시피</Link>
-                    {/* <Link to="/new">나의 레시피 등록하기</Link> */}
-                </div>
+            <div className={`input_box subinput ${inView ? '' : 'on'}`} style={{ width: `${withs}px` }}>
                 <div className='input'>
-                    <input type='text' ref={(e) => { serch.current[0] = e }} placeholder={"재료로 검색"} onKeyUp={(e) => { keyup(e) }}></input> <button onClick={() => serchbut(true)}> <p><img src='./serch.png' /></p> </button>
+                    <input type='search' ref={(e) => { serch.current[0] = e }} placeholder={"재료로 검색"} onKeyUp={(e) => { keyup(e) }}></input> <button onClick={() => { serchbut(true); }}> <p><img src='/react_food_script/serch.png' /></p> </button>
+                </div>
+                <button className='top'>
+                    <p onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }) }}>△</p>
+                </button>
+            </div>
+            <div className='header'>
+                <div ref={view} className='HDtop'><p><img src='/react_food_script/ice_box.png' alt="" /></p> <h2 onClick={() => { serchbut(true) }}>오늘은 뭐해 먹지?</h2> <p onClick={() => setsubOn(true)}><img src='/react_food_script/berger.png'></img></p></div>
+                <div className={`header_box ${subOn ? 'on' : ''}`}>
+                    <div className={`sub_box`}>
+                        <p onClick={() => setsubOn(false)}><img src='/react_food_script/close.png' /></p>
+                        <Link to="/" onClick={() => { setsubOn(false) }}>추천 레시피</Link>
+                        <Link to="/lover" onClick={() => { setsubOn(false) }}>좋아요한 레시피</Link>
+                        {/* <Link to="/new">나의 레시피 등록하기</Link> */}
+                    </div>
+                </div>
+                <div className={`input_box`}>
+                    <div className='input'>
+                        <input type='search' ref={(e) => { serch.current[0] = e }} placeholder={"재료로 검색"} onKeyUp={(e) => { keyup(e) }}></input> <button onClick={() => serchbut(true)}> <p><img src='/react_food_script/serch.png' /></p> </button>
+                    </div>
+
                 </div>
                 <ul className='hashi'>
-                    <li onClick={(e) => liserch(e.currentTarget)}>상추</li>
-                    <li onClick={(e) => liserch(e.currentTarget)}>감자</li>
-                    <li onClick={(e) => liserch(e.currentTarget)}>배추</li>
+                    <li onClick={(e) => { liserch(e.currentTarget); lion(e.target) }}>상추</li>
+                    <li onClick={(e) => { liserch(e.currentTarget); lion(e.target) }}>감자</li>
+                    <li onClick={(e) => { liserch(e.currentTarget); lion(e.target) }}>배추</li>
                 </ul>
             </div>
 
             <div className='contan home'>
                 <ul>
                     {
+                        foodData.length == 0? <p>로오오오오오오ㅗㅗ딩</p> :
                         (foodData_list == undefined) ? (<p>검색 내용이 없습니다</p>)
                             : (
                                 foodData_list.map((v: any, k: number) => (
                                     <li key={k} onClick={() => {
-                                        navi(`/datail/${v.idx._text}`);
+                                        navi(`/datail/${v.idx._text}`, { state: { ...v } });
                                     }}>
                                         <figure className='food_data'>
                                             <p>
@@ -92,8 +132,8 @@ function Home({ }: Props) {
                                                 <div className='title'>
                                                     {v.title._cdata}
                                                     <div>
-                                                        <p><img src='./Thanksgiving.png' />{Math.ceil(Math.random() * 50) + "분"} </p>
-                                                        <p><img src='./icon_heart_.png' />{Math.ceil(Math.random() * 100)}</p>
+                                                        <p><img src='/react_food_script/Thanksgiving.svg' />{Math.ceil(Math.random() * 50) + "분"} </p>
+                                                        <p><img src='/react_food_script/icon_heart_.svg' />{Math.ceil(Math.random() * 100)}</p>
                                                     </div>
                                                 </div>
 
@@ -104,8 +144,8 @@ function Home({ }: Props) {
                                 ))
                             )
                     }
-                    <Link to="/list">
-                    <button className='ice-box'> <p><img src="./ice_box.png" alt="" /></p></button>
+                    <Link to="/list" className='ice-box'>
+                        <p><img src='/react_food_script/ice_box.png' alt="" /></p>
                     </Link>
                 </ul>
                 <button onClick={() => { setpagenum(pagenum + 1) }} className={`long_but ${(foodData == null) ? 'off' : ""}`}> more </button>

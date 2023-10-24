@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.scss';
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import  MyCon  from './MyCon';
@@ -21,10 +20,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/list"element={<List/>}></Route>
-            <Route path ="/lover" element={<Lover/>}></Route>
+            <Route path="/lover" element={<Lover/>}></Route>
             <Route path="/datail/:idx" element={<Datail/>}></Route>
-            <Route path="del" element={<Del/>}></Route>
-            <Route path="list_but" element={<List_but/>}></Route>
+            <Route path="/del" element={<Del/>}></Route>
+            <Route path="/list_but" element={<List_but/>}></Route>
             {/* <Route path="/new" element={<New />}></Route> */}
           </Routes>
         </MyCon>

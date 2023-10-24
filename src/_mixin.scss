@@ -1,9 +1,46 @@
-@mixin flex($just : space-between  , $align :center){
+@mixin flex($just : space-between, $align :center) {
     display: flex;
     justify-content: $just;
     align-items: $align;
 }
 
-$font_Big : 20px;
-$font_middle : 15px;
-$font_small : 12px;
+:root {
+    --font_morBig: 5rem;
+    --font_Big: 3rem;
+    --font_middle: 2rem;
+    --font_small: 1.5rem;
+
+}
+
+@media screen and (max-width : 780px) {
+    :root {
+        --font_morBig: 10vw;
+        --font_Big: 6vw;
+        --font_middle: 4vw;
+        --font_small: 3vw;
+    }
+}
+
+
+
+@keyframes lover {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes on{
+    0%{ transform: translate(-50%, -100%); opacity: 0;}
+    100%{transform: translate(-50%, 10%); opacity: 1;}
+}

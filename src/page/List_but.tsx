@@ -18,17 +18,16 @@ function List_but({ }: Props) {
 
   //다운 이벤트때 mod 갱신
   const clickFn = (food: string, id: number) => {
-    if(mod == true){
+    if (mod == true) {
       setmod(true)
-      console.log(mod);
-      
-    }else{
+      console.log('but', mod)
+    } else {
       setmod(false)
       data.filter((item: { id: number, food: string, state: boolean }) => (item.state == true)).length ? setmod(true) : setmod(false);
     }
-    
-    if(!mod){
-  
+
+    if (!mod) {
+
       time = setTimeout(() => {
         setmod(true)
         setData(
@@ -36,13 +35,13 @@ function List_but({ }: Props) {
             if (item.id == id) {
               item.state = !item.state
               setfirstid(id)
-              
+
             }
             return item;
           })
         );
       }, 1000)
-    }else{
+    } else {
 
     }
 
@@ -91,9 +90,6 @@ function List_but({ }: Props) {
   }
 
 
-  useEffect(()=>{
-    cancel()
-  },[])
 
   return (
     <>
@@ -102,7 +98,7 @@ function List_but({ }: Props) {
           <li key={v.id}
             onMouseDown={() => { clickFn(v.food, v.id) }}
             onClick={() => { clickChange(v.id, v.food) }}
-            className={`${new Date(v.id*10*24*60*60*1000) >= new Date() ? 'old':""} ${v.state ? 'on' : ''}`}>{v.food}</li>
+            className={`${new Date(v.id * 10 * 24 * 60 * 60 * 1000) >= new Date() ? 'old' : ""} ${v.state ? 'on' : ''}`}>{v.food}</li>
         ))
         }
       </ul>
