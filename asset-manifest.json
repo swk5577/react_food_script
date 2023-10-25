@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react_food_script/static/css/main.40047c8a.css",
+    "main.css": "/react_food_script/static/css/main.2a11bd23.css",
     "main.js": "/react_food_script/static/js/main.b09ad376.js",
     "static/js/787.f7e35124.chunk.js": "/react_food_script/static/js/787.f7e35124.chunk.js",
     "static/media/YeongdeokSea.woff2": "/react_food_script/static/media/YeongdeokSea.264d39d97693d5da045d.woff2",
@@ -9,12 +9,12 @@
     "index.html": "/react_food_script/index.html",
     "static/media/icon_heart_.svg": "/react_food_script/static/media/icon_heart_.7c941d22e90f08d7a20b.svg",
     "static/media/icon_heart_glay.svg": "/react_food_script/static/media/icon_heart_glay.b28397253dd143421cf7.svg",
-    "main.40047c8a.css.map": "/react_food_script/static/css/main.40047c8a.css.map",
+    "main.2a11bd23.css.map": "/react_food_script/static/css/main.2a11bd23.css.map",
     "main.b09ad376.js.map": "/react_food_script/static/js/main.b09ad376.js.map",
     "787.f7e35124.chunk.js.map": "/react_food_script/static/js/787.f7e35124.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40047c8a.css",
+    "static/css/main.2a11bd23.css",
     "static/js/main.b09ad376.js"
   ]
 }
